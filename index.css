@@ -376,10 +376,9 @@
         }
 
         @media (max-width: 480px) {
-            .support-section .icon_support {
-                width: 15w;
+            .icon_support {
+                width: 5w;
                 margin: 0 0;
-                margin-bottom: -3vh;
             }
 
             .support-section h2 {
