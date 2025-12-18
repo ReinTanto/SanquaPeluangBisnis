@@ -55,3 +55,9 @@
                 card.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.05)';
             });
         });
+
+
+
+const slidesContainer = document.getElementById('slides');
+        const originalSlides = slidesContainer.innerHTML;
+        slidesContainer.innerHTML += originalSlides;

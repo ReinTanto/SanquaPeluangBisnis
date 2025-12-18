@@ -146,14 +146,13 @@
         }
 
         .support-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            display: flex;              /* ← switch from grid */
+            flex-wrap: wrap;            /* allow wrapping */
+            justify-content: center;    /* ← centers last/odd row */
             gap: 30px;
-            margin-top: 30px;
-            margin-left: 7vw;
-            margin-right: 7vw;
-        }
 
+            margin-top: 30px;
+        }
         .support-card {
             background-color: var(--white-color);
             border: 1px solid var(--border-color);
@@ -161,7 +160,10 @@
             padding: 30px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+
+            width: 360px;        /* ← REQUIRED for centering */
+            max-width: 100%;     /* keeps it responsive */
+    }
 
         .support-card:hover {
             transform: translateY(-5px);
@@ -328,6 +330,10 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .slide .testimonial-card {
+            width: 100vw;
+            }
+
             .header-content {
                 flex-direction: column;
                 gap: 20px;
@@ -376,6 +382,10 @@
         }
 
         @media (max-width: 480px) {
+            .slide .testimonial-card {
+            width: 100vw;
+            }
+
             .icon_support {
                 width: 5w;
                 margin: 0 0;
@@ -429,3 +439,34 @@
             }
         }
         
+
+
+        .carousel {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            margin: 20px 0;
+        }
+        .slides {
+            display: flex;
+            width: max-content;
+            animation: slide 20s linear infinite;
+            gap: 2vw;
+        }
+        .slide {
+            min-width: 360px;
+        }
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        /* Duplicate slides to create seamless infinite loop */
+        .slides.clone {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .slide .testimonial-card {
+            width: 80vw;
+        }
