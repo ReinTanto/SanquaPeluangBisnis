@@ -140,7 +140,7 @@
 
         .section-title {
             text-align: center;
-            font-size: 2rem;
+            font-size: 1.25rem;
             color: var(--primary-color);
             margin-bottom: 1vh;
         }
@@ -177,7 +177,7 @@
         }
 
         .support-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             color: var(--primary-color);
             margin-bottom: 15px;
         }
@@ -197,17 +197,18 @@
             display: flex;
             align-items: center;
             gap: 40px;
-            margin-top: 30px;
         }
 
         .features-text {
             flex: 1;
+            padding-left: 7.5vw;
         }
 
         .features-text h2 {
             font-size: 2rem;
             color: var(--primary-color);
             margin-bottom: .5vh;
+            text-align: left;
         }
 
         .features-text p {
@@ -218,36 +219,22 @@
 
         .features-image {
             flex: 1;
-            position: relative;
+            align-items: center;
+            display: flex;
+            justify-content: center; /* horizontal */
         }
 
         .features-image img {
-            width: 100%;
-            height: auto;
+            height: 50vh;
+            width: auto;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
-        .feature-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .feature-badge h3 {
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            margin-bottom: 5px;
-        }
 
         /* Testimonials Section */
         .testimonials-section {
-            padding: 60px 0;
+            padding: 60px 20vw;
             background-color: var(--white-color);
         }
 
@@ -330,6 +317,15 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .features-image img {
+                height: 30vh;
+            }
+
+            .testimonials-section {
+            padding: 60px 10vw;
+            background-color: var(--white-color);
+        }
+
             .slide .testimonial-card {
             width: 100vw;
             }
@@ -382,8 +378,17 @@
         }
 
         @media (max-width: 480px) {
+            .features-image img {
+                height: 30vh;
+            }
+
+            .testimonials-section {
+                padding: 60px 0vw;
+                background-color: var(--white-color);
+            }
+
             .slide .testimonial-card {
-            width: 100vw;
+                width: 100vw;
             }
 
             .icon_support {
@@ -470,3 +475,5 @@
         .slide .testimonial-card {
             width: 80vw;
         }
+
+        
